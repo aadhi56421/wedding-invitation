@@ -3,6 +3,7 @@ import { Countdown } from './components/Countdown';
 import { Couple } from './components/Couple';
 import { Events } from './components/Events';
 import { Gallery } from './components/Gallery';
+import { Wishes } from './components/Wishes';
 import { Footer } from './components/Footer';
 import { MusicToggle } from './components/MusicToggle';
 
@@ -15,6 +16,7 @@ function App() {
       <Couple />
       <Events />
       <Gallery />
+      <Wishes />
       <Footer />
     </main>
   );

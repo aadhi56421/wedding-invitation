@@ -1,0 +1,17 @@
+{
+  "name": "wedding-invitation",
+  "compatibility_date": "2026-07-13",
+  "compatibility_flags": ["nodejs_compat"],
+  "main": "src/worker.js",
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "wedding-wishes",
+      "database_id": "81aaf88e-6f32-470f-a7df-cba5f50122b5"
+    }
+  ]
+}
