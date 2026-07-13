@@ -37,6 +37,9 @@ export default {
       boxShadow: {
         soft: '0 10px 40px -10px rgba(92, 26, 43, 0.25)',
       },
+      animation: {
+        'spin-slow': 'spin 5s linear infinite',
+      },
     },
   },
   plugins: [],

@@ -5,7 +5,7 @@ import { wedding } from '../data/wedding';
 const photos = [
   wedding.images.brideSolo,
   wedding.images.collage,
-  wedding.images.couplePortrait,
+  wedding.images.coupleClose,
 ];
 
 export function Gallery() {

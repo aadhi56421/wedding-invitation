@@ -28,9 +28,10 @@ export const wedding = {
     )}`,
   },
   images: {
-    heroBg: '/images/couple-close.jpg',
+    heroBg: '/images/couple-portrait.jpg',
     couplePortrait: '/images/couple-portrait.jpg',
     collage: '/images/collage.jpg',
     brideSolo: '/images/bride-solo.jpg',
+    coupleClose: '/images/couple-close.jpg',
   },
 };
