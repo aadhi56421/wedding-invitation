@@ -4,9 +4,14 @@ import { wedding } from '../data/wedding';
 
 export function Hero() {
   return (
-    <section className="relative flex min-h-[100svh] w-full items-center justify-center overflow-hidden">
+    <section className="bg-maroon-dark relative flex min-h-[100svh] w-full items-center justify-center overflow-hidden">
+      {/* blurred ambient fill so the full (uncropped) photo can float on mobile without empty margins */}
       <div
-        className="absolute inset-0 bg-cover bg-[65%_30%] sm:bg-[center_35%]"
+        className="absolute inset-0 scale-110 bg-cover bg-center blur-2xl sm:hidden"
+        style={{ backgroundImage: `url(${wedding.images.heroBg})` }}
+      />
+      <div
+        className="absolute inset-0 bg-contain bg-center bg-no-repeat sm:bg-cover sm:bg-[center_35%]"
         style={{ backgroundImage: `url(${wedding.images.heroBg})` }}
       />
       <div className="from-maroon-dark/85 via-maroon-dark/70 to-maroon-dark/90 absolute inset-0 bg-gradient-to-b" />
