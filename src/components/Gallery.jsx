@@ -2,11 +2,7 @@ import { motion } from 'framer-motion';
 import { Divider } from './Ornament';
 import { wedding } from '../data/wedding';
 
-const photos = [
-  wedding.images.brideSolo,
-  wedding.images.collage,
-  wedding.images.coupleClose,
-];
+const photos = [wedding.images.collage];
 
 export function Gallery() {
   return (
@@ -23,7 +19,7 @@ export function Gallery() {
         </h2>
         <Divider className="my-8" />
 
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+        <div className="mx-auto grid max-w-sm grid-cols-1 gap-4">
           {photos.map((src, i) => (
             <motion.div
               key={src}
