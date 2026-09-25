@@ -3,7 +3,7 @@ import { Music2, VolumeX } from 'lucide-react';
 
 const VIDEO_ID = 'rH9mDCe83v0'; // Abeer Nehme - Bi Saraha (official, Universal Music MENA)
 
-export function MusicToggle() {
+export function MusicToggle({ autoStart = false }) {
   const containerRef = useRef(null);
   const playerRef = useRef(null);
   const [ready, setReady] = useState(false);
@@ -52,6 +52,13 @@ export function MusicToggle() {
       cancelled = true;
     };
   }, []);
+
+  useEffect(() => {
+    if (!autoStart || !ready || !playerRef.current) return;
+    playerRef.current.setVolume(45);
+    playerRef.current.playVideo();
+    setPlaying(true);
+  }, [autoStart, ready]);
 
   const toggle = () => {
     if (!ready || !playerRef.current) return;
