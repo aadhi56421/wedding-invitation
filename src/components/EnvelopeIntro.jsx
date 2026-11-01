@@ -90,7 +90,7 @@ export function EnvelopeIntro({ onOpen }) {
             />
             <div className="absolute inset-x-0 bottom-[14%] text-center text-cream">
               <p className="font-script text-gold-light text-5xl sm:text-6xl">
-                {wedding.bride.name.split(' ')[0]} &amp; {wedding.groom.name.split(' ')[0]}
+                {wedding.groom.name.split(' ')[0]} &amp; {wedding.bride.name.split(' ')[0]}
               </p>
               <p className="mt-2 text-[11px] tracking-[0.35em] text-cream/80 uppercase sm:text-sm">
                 Nikkah Invitation
