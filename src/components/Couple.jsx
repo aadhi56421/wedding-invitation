@@ -50,20 +50,20 @@ export function Couple() {
 
         <div className="grid grid-cols-1 gap-10 sm:grid-cols-[1fr_auto_1fr] sm:gap-6">
           <Person
-            name={wedding.bride.name}
-            father={wedding.bride.father}
-            mother={wedding.bride.mother}
-            relation="The Bride"
+            name={wedding.groom.name}
+            father={wedding.groom.father}
+            mother={wedding.groom.mother}
+            relation="The Groom"
             delay={0.1}
           />
           <div className="flex items-center justify-center">
             <span className="font-script text-gold text-6xl">&amp;</span>
           </div>
           <Person
-            name={wedding.groom.name}
-            father={wedding.groom.father}
-            mother={wedding.groom.mother}
-            relation="The Groom"
+            name={wedding.bride.name}
+            father={wedding.bride.father}
+            mother={wedding.bride.mother}
+            relation="The Bride"
             delay={0.3}
           />
         </div>
