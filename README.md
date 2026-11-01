@@ -1,4 +1,4 @@
-# Fairooza & Adil — Nikkah Invitation
+# Adil & Fairooza — Nikkah Invitation
 
 A simple, elegant wedding invitation site built with React, Vite, Tailwind CSS, and Framer Motion.
 
