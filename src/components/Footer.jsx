@@ -15,7 +15,7 @@ export function Footer() {
       <CrescentDivider className="my-8" />
 
       <p className="font-script text-4xl text-cream sm:text-5xl">
-        Fairooza &amp; Adil
+        Adil &amp; Fairooza
       </p>
       <p className="text-blush-light/80 mt-3 text-sm tracking-[0.3em] uppercase">
         {wedding.nikkah.label}

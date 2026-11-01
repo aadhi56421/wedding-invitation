@@ -41,7 +41,7 @@ export function Hero() {
               '0 2px 6px rgba(0,0,0,0.55), 0 8px 30px rgba(0,0,0,0.5)',
           }}
         >
-          Fairooza &amp; Adil
+          Adil &amp; Fairooza
         </motion.h1>
 
         <motion.div
