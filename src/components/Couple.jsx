@@ -43,7 +43,7 @@ export function Couple() {
         >
           <img
             src={wedding.images.couplePortrait}
-            alt="Fairooza and Adil"
+            alt="Adil and Fairooza"
             className="aspect-[3/4] w-full object-cover"
           />
         </motion.div>
