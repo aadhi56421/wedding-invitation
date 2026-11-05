@@ -1,9 +1,9 @@
-import { useEffect, useRef, useState } from 'react';
+import { forwardRef, useEffect, useImperativeHandle, useRef, useState } from 'react';
 import { Music2, VolumeX } from 'lucide-react';
 
 const VIDEO_ID = 'rH9mDCe83v0'; // Abeer Nehme - Bi Saraha (official, Universal Music MENA)
 
-export function MusicToggle({ autoStart = false }) {
+export const MusicToggle = forwardRef(function MusicToggle(_props, ref) {
   const containerRef = useRef(null);
   const playerRef = useRef(null);
   const [ready, setReady] = useState(false);
@@ -17,8 +17,8 @@ export function MusicToggle({ autoStart = false }) {
       if (containerRef.current.tagName !== 'DIV') return; // already replaced by iframe
 
       playerRef.current = new window.YT.Player(containerRef.current, {
-        height: '0',
-        width: '0',
+        height: '200',
+        width: '200',
         videoId: VIDEO_ID,
         playerVars: {
           loop: 1,
@@ -53,12 +53,17 @@ export function MusicToggle({ autoStart = false }) {
     };
   }, []);
 
-  useEffect(() => {
-    if (!autoStart || !ready || !playerRef.current) return;
-    playerRef.current.setVolume(45);
-    playerRef.current.playVideo();
-    setPlaying(true);
-  }, [autoStart, ready]);
+  // iOS only allows playback started synchronously inside a tap handler,
+  // so the envelope tap calls start() directly instead of via an effect.
+  useImperativeHandle(ref, () => ({
+    start() {
+      const player = playerRef.current;
+      if (!player || !ready) return;
+      player.setVolume(45);
+      player.playVideo();
+      setPlaying(true);
+    },
+  }));
 
   const toggle = () => {
     if (!ready || !playerRef.current) return;
@@ -75,7 +80,7 @@ export function MusicToggle({ autoStart = false }) {
     <>
       <div
         ref={containerRef}
-        className="pointer-events-none fixed h-0 w-0 opacity-0"
+        className="pointer-events-none fixed top-0 -left-[300px] h-[200px] w-[200px] opacity-0"
       />
       <button
         type="button"
@@ -92,4 +97,4 @@ export function MusicToggle({ autoStart = false }) {
       </button>
     </>
   );
-}
+});
