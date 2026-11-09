@@ -8,6 +8,7 @@ export const MusicToggle = forwardRef(function MusicToggle(_props, ref) {
   const playerRef = useRef(null);
   const [ready, setReady] = useState(false);
   const [playing, setPlaying] = useState(false);
+  const wantPlayRef = useRef(false);
 
   useEffect(() => {
     let cancelled = false;
@@ -27,7 +28,14 @@ export const MusicToggle = forwardRef(function MusicToggle(_props, ref) {
         },
         events: {
           onReady: () => {
-            if (!cancelled) setReady(true);
+            if (cancelled) return;
+            setReady(true);
+            // tapped before the player finished loading: start now
+            if (wantPlayRef.current) {
+              playerRef.current.setVolume(45);
+              playerRef.current.playVideo();
+              setPlaying(true);
+            }
           },
         },
       });
@@ -58,6 +66,7 @@ export const MusicToggle = forwardRef(function MusicToggle(_props, ref) {
   useImperativeHandle(ref, () => ({
     start() {
       const player = playerRef.current;
+      wantPlayRef.current = true;
       if (!player || !ready) return;
       player.setVolume(45);
       player.playVideo();
